@@ -391,11 +391,8 @@ class DateColumn:
         if self.serie is not None:
             value_counts = self.serie.value_counts()
             most_frequent = self.serie.value_counts().nlargest(20)
-            # print(value_counts)
             self.frequent.value = most_frequent.index.tolist()
-            print(most_frequent.index.tolist())
             self.frequent.occurrence = most_frequent.values
-            print(most_frequent.values)
             self.frequent.percentage = (self.frequent.occurrence /
                                         value_counts.values.sum()) * 100
 

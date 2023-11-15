@@ -40,11 +40,3 @@ def display_tab_df_content(file_path):
             st.dataframe(dataset.get_tail(num_rows_to_display))
         else:
             st.dataframe(dataset.get_sample(num_rows_to_display))
-
-# Streamlit app code
-st.title("CSV File Analysis")
-
-uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
-
-if uploaded_file is not None:
-    display_tab_df_content(uploaded_file)
